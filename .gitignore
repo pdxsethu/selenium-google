@@ -1,9 +1,7 @@
-
 .idea/
 selenium-google.iml
-
 /target/
 /bin/
 .classpath
 .project
-.settings
+.settings/
