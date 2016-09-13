@@ -16,9 +16,9 @@ import java.util.Properties;
 public class GoogleHello {
     public static void main(String[] args) {
       //DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();  ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true); 
-      WebDriver webDriver = new InternetExplorerDriver();
+        setSystemProperty("ie");
 
-        System.setProperty("webdriver.ie.driver", ".\\IEDriverServer.exe");
+      	WebDriver webDriver = new InternetExplorerDriver();
 
         webDriver.get("http://www.spsdemo.com");
 
@@ -31,5 +31,12 @@ public class GoogleHello {
         //<img class="ms-ellipsis-icon" src="/_layouts/15/images/spcommon.png?rev=23" alt="Swiss Parliament Open Menu">
         //webDriver.findElement(By.name("signIn")).click();
 
+    }
+    protected static void setSystemProperty(String browser){
+	if(browser.equals("ie")){
+	        System.setProperty("webdriver.ie.driver", ".\\drivers\\IEDriverServer.exe");
+	}else if(browser.equals("chrome")){
+		System.setProperty("webdriver.ie.driver", ".\\drivers\\ChromeDriver.exe");
+	}
     }
 }
